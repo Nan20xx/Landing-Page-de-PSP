@@ -1,0 +1,425 @@
+/* --- CONFIGURACIÓN DE COLORES (MODO CLARO POR DEFECTO) --- */
+:root {
+    --bg-principal: #ffffff;
+    --bg-secciones: #f9f9f9;
+    --texto-principal: #333333;
+    --texto-secundario: #666666;
+    --bg-tarjetas: #ffffff;
+    --borde: #dddddd;
+    --sombra: rgba(0, 0, 0, 0.05);
+}
+
+/* --- COLORES CUANDO EL MODO OSCURO ESTÁ ACTIVO --- */
+body.dark-mode {
+    --bg-principal: #121212;
+    --bg-secciones: #1e1e1e;
+    --texto-principal: #f5f5f5;
+    --texto-secundario: #b0b0b0;
+    --bg-tarjetas: #242424;
+    --borde: #333333;
+    --sombra: rgba(0, 0, 0, 0.5);
+}
+
+/* --- ESTILOS GENERALES Y ESTRUCTURA --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'MI BOMBO', sans-serif;
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@font-face {
+    font-family: 'MI BOMBO';
+    src: url('Fonts/playstation_by_lyricwest_dby5il4.ttf') format('woff2');
+}
+
+.Main {
+    margin-top: 70px;
+    overflow: hidden; 
+    box-shadow: 0 4px 15px var(--sombra);
+}
+
+#Fondo1 {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.autoScroll {
+    min-height: 50vh;
+    padding: 60px 20px;
+    background-color: var(--bg-secciones);
+}
+
+.autoScroll:nth-of-type(even) {
+    background-color: var(--bg-principal);
+}
+
+/* --- CABECERA / HEADER --- */
+.header {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0);
+    position: fixed;   
+    top: 0;            
+    left: 0;           
+    width: 100%;       
+    z-index: 1000;     
+}
+
+.headerContent {
+    display: flex;             
+    justify-content: space-between; 
+    align-items: center;       
+    width: 100%;               
+    padding: 0 40px;           
+    height: 70px;              
+    box-sizing: border-box;    
+    letter-spacing: 1px;
+}
+
+.headerContent a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+#fondoMenu {
+    width: 60px;  
+    height: auto;   
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+}
+
+.toggle-dark {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.toggle-dark:hover {
+    transform: scale(1.2);
+}
+
+/* El botón hamburguesa está oculto por defecto en ordenadores */
+.menu-hamburguesa {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.menu-hamburguesa span {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animación del menú hamburguesa transformándose en una X */
+.menu-hamburguesa.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.menu-hamburguesa.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-hamburguesa.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --- CARRUSEL DE IMÁGENES --- */
+.carrusel-contenedor {
+    position: relative;
+    max-width: 800px; 
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.carrusel-pantalla {
+    width: 100%;
+    height: 450px; 
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carrusel-tracks {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-tracks img {
+    min-width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+}
+
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 15px 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.flecha:hover {
+    background-color: rgb(194, 97, 97); 
+}
+
+.prev { left: -2px; }
+.next { right: -2px; }
+
+.carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.punto {
+    width: 12px;
+    height: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.punto.activo {
+    background-color: var(--texto-principal); 
+    transform: scale(1.2);
+}
+
+/* --- SECCIÓN DE PRECIOS --- */
+.subtitulo-precios {
+    text-align: center;
+    color: var(--texto-secundario);
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto; 
+    box-shadow: 0 4px 15px var(--sombra);
+    border-radius: 8px;
+}
+
+.tabla-precios {
+    width: 100%;
+    border-collapse: collapse; 
+    background-color: var(--bg-tarjetas);
+    font-family: sans-serif;
+    text-align: left;
+    color: var(--texto-principal);
+}
+
+.tabla-precios thead tr {
+    background-color: rgb(0, 0, 0); 
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.tabla-precios th, 
+.tabla-precios td {
+    padding: 15px 20px;
+}
+
+.tabla-precios tbody tr {
+    border-bottom: 1px solid var(--borde);
+    transition: background-color 0.3s ease;
+}
+
+.tabla-precios tbody tr:nth-of-type(even) {
+    background-color: var(--bg-secciones);
+}
+
+.tabla-precios tbody tr:hover {
+    background-color: rgba(194, 97, 97, 0.1); 
+}
+
+.precio-destacado {
+    color: rgba(160, 75, 75, 0.9);
+    font-weight: bold;
+}
+
+/* --- SECCIÓN DE CONTACTO --- */
+.subtitulo-contacto {
+    text-align: center;
+    color: var(--texto-secundario);
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.contacto-flex {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 40px;
+    flex-wrap: wrap; 
+}
+
+.formulario-contacto {
+    flex: 2;
+    min-width: 300px;
+    background-color: var(--bg-tarjetas);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--sombra);
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+}
+
+.grupo-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--texto-principal);
+    font-family: sans-serif;
+}
+
+.grupo-input input,
+.grupo-input textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borde);
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box; 
+    font-family: sans-serif;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+    border-color: rgb(194, 97, 97);
+    outline: none; 
+}
+
+.btn-enviar {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    background-color: rgb(41, 41, 41); 
+}
+
+.info-contacto {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tarjeta-info {
+    background-color: var(--bg-tarjetas);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--sombra);
+    border-left: 5px solid rgb(0, 0, 0);
+    color: var(--texto-principal);
+}
+
+.tarjeta-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.tarjeta-info p {
+    margin: 0;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+/* ==========================================================================
+   📦 REGLAS MEDIA QUERY: RESPONSIVE PARA DISPOSITIVOS MÓVILES (768px o menos)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .headerContent {
+        padding: 0 20px;
+    }
+
+    /* Activamos el botón hamburguesa en móviles */
+    .menu-hamburguesa {
+        display: flex;
+    }
+
+    /* Transformamos el menú horizontal en una cortina vertical oculta */
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%; /* Totalmente escondido a la derecha */
+        width: 70%;
+        height: calc(100vh - 70px);
+        background-color: rgb(0, 0, 0);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 50px;
+        gap: 40px;
+        transition: right 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+        box-shadow: -4px 0 15px rgba(0,0,0,0.3);
+    }
+
+    /* Clase que inyectará JS para abrir la cortina */
+    .nav-links.open {
+        right: 0;
+    }
+
+    /* Forzamos que las imágenes del carrusel reduzcan su altura en móviles */
+    .carrusel-pantalla {
+        height: 250px;
+    }
+
+    /* Escondemos las flechas en móviles para evitar toques accidentales */
+    .flecha {
+        display: none;
+    }
+}

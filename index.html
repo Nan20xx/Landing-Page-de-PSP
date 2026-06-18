@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/img/Logo.png">
+</head>
+<body>
+
+<header class="header">
+  <div class="headerContent">
+    
+    <a href="index.html"><img src="/img/Logo 2.png" id="fondoMenu"></a>
+    
+    <button class="menu-hamburguesa" id="btn-hamburguesa">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#">Inicio</a>
+      <a href="#caracteristicas">Caracteristicas</a>
+      <a href="#precios">Precios</a>
+      <a href="#contacto">Contacto</a>
+      <button id="btn-dark-mode" class="toggle-dark">🌙</button>
+    </nav>
+
+  </div>
+</header>
+
+<div class="Main">
+  <img src="/img/Fondo 2.png" id="Fondo1">
+</div>
+
+<div class="autoScroll" id="caracteristicas">
+  <center><h2>Nuestras Características</h2></center>
+
+  <h3>🎮 Especificaciones Técnicas Principales:</h3>
+  <p>-Procesador (CPU): MIPS R4000 con una velocidad variable de 1 a 333 MHz.</p>
+  <p>-Memoria RAM: 32 MB en el modelo original (PSP-1000), y 64 MB en los modelos posteriores (PSP-2000, PSP-3000 y PSP Go).</p>
+  <p>-Pantalla: LCD TFT panorámica de 4.3 pulgadas con resolución de 480 × 272 píxeles y capacidad para 16.77 millones de colores.</p>
+  <p>-Almacenamiento: Utilizaba tarjetas de memoria Memory Stick PRO Duo (hasta 32 GB).</p>
+  <p>-Formatos físicos: Unidad lectora de discos ópticos pequeños llamada UMD (Universal Media Disc), con capacidad de 900 MB a 1.8 GB.</p>
+  <p>-Conectividad: Wi-Fi (802.11b) y puerto USB 2.0.</p>
+  <p>-Dimensiones: Aproximadamente 170 mm x 74 mm x 23 mm (varía ligeramente según la versión) y un peso de unos 280 gramos.</p>
+
+  <h3>🌟 Características Destacadas:</h3>
+  <p>-Centro Multimedia: Además de juegos, permite reproducir música (MP3, ATRAC3), visualizar imágenes (JPEG) y reproducir videos (MP4), ideal para llevar contenido personal.</p>
+  <p>-Interfaz Innovadora: Utiliza el sistema de menús interactivos XrossMediaBar (XMB), similar al de la consola PlayStation 3 y otros dispositivos Sony.</p>
+  <p>-Controles Integrados: Dispone de la clásica cruceta, los botones de acción, botones frontales (Start, Select, Home) y un joystick analógico que supuso una gran innovación para la época.</p>
+</div>
+
+<div class="carrusel-contenedor">
+  <button class="flecha prev" id="btn-prev">&#10094;</button>
+
+  <div class="carrusel-pantalla">
+    <div class="carrusel-tracks" id="track">
+      <img src="/img/Cr1.png" alt="Imagen 1">
+      <img src="/img/image copy 3.png" alt="Imagen 2">
+      <img src="/img/image.png" alt="Imagen 3">
+    </div>
+  </div>
+
+  <button class="flecha next" id="btn-next">&#10095;</button>
+
+  <div class="carrusel-indicadores" id="indicadores"></div>
+</div>
+
+<div class="autoScroll" id="precios">
+  <center><h2>Nuestros Precios (Modelos PSP)</h2></center>
+  <p class="subtitulo-precios">Compara las versiones de la mítica portátil de Sony y su valor estimado actual en el mercado de colección.</p>
+
+  <div class="tabla-contenedor">
+    <table class="tabla-precios">
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>Características Clave</th>
+          <th>Precio de Lanzamiento</th>
+          <th>Precio Colección (Caja)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>PSP-1000</strong></td>
+          <td>Modelo original, construcción robusta, pantalla LCD original.</td>
+          <td>$249 USD</td>
+          <td class="precio-destacado">$150 USD</td>
+        </tr>
+        <tr>
+          <td><strong>PSP-2000</strong></td>
+          <td>Edición Slim, doble de memoria RAM (64MB), salida de TV.</td>
+          <td>$169 USD</td>
+          <td class="precio-destacado">$180 USD</td>
+        </tr>
+        <tr>
+          <td><strong>PSP-3000</strong></td>
+          <td>Pantalla de alto contraste (antireflejo), micrófono integrado.</td>
+          <td>$169 USD</td>
+          <td class="precio-destacado">$220 USD</td>
+        </tr>
+        <tr>
+          <td><strong>PSP Go</strong></td>
+          <td>Diseño deslizable, 16GB internos, Bluetooth, sin lector UMD.</td>
+          <td>$249 USD</td>
+          <td class="precio-destacado">$300 USD</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="autoScroll" id="contacto">
+  <center><h2>Contacto y Soporte</h2></center>
+  <p class="subtitulo-contacto">¿Tienes dudas sobre algún modelo, componentes o mantenimiento? Escríbenos.</p>
+
+  <div class="contacto-flex">
+    <form class="formulario-contacto" action="#" method="POST">
+      <div class="grupo-input">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." required>
+      </div>
+
+      <div class="grupo-input">
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+      </div>
+
+      <div class="grupo-input">
+        <label for="mensaje">Tu Consulta o Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe los detalles de tu consulta sobre la PSP..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+    </form>
+
+    <div class="info-contacto">
+      <div class="tarjeta-info">
+        <h3>📍 Ubicación del Taller</h3>
+        <p>Av. Principal del Coleccionismo, Local Retro #4</p>
+      </div>
+
+      <div class="tarjeta-info">
+        <h3>✉️ Correo Directo</h3>
+        <p>soporte@psplandpage.com</p>
+      </div>
+
+      <div class="tarjeta-info">
+        <h3>⏰ Horario de Atención</h3>
+        <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
